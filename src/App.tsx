@@ -1,56 +1,26 @@
-import styled, { keyframes } from "styled-components";
+import React, { useState } from "react";
+import styled from "styled-components";
 
-const Wrapper = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: ${(props) => props.theme.backgroundColor};
+const Container = styled.div`
+  background-color: ${(props) => props.theme.bgColor};
 `;
-
-const rotationAnimation = keyframes`
-  0%{
-    transform: rotate(0deg);
-    border-radius: 20px;
-  }
-  50%{
-    transform: rotate(180deg);
-    border-radius: 100px;
-  }
-  100%{
-    transform: rotate(360deg);
-    border-radius: 20px;
-  }
-`;
-
-const Emoji = styled.span`
-  font-size: 36px;
+const H1 = styled.h1`
   color: ${(props) => props.theme.textColor};
 `;
 
-const Box = styled.div`
-  height: 200px;
-  width: 200px;
-  background-color: tomato;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: ${rotationAnimation} 3s linear infinite;
-  ${Emoji} {
-    &:hover {
-      font-size: 98px;
-    }
-  }
+const Btn = styled.button`
+  background-color: ${(props) => props.theme.btnColor};
+  color: ${(props) => props.theme.textColor};
 `;
 
 function App() {
   return (
-    <Wrapper>
-      <Box>
-        <Emoji as="p">❤</Emoji>
-      </Box>
-    </Wrapper>
+    <div>
+      <Container>
+        <H1>protected</H1>
+        <Btn>is</Btn>
+      </Container>
+    </div>
   );
 }
 
